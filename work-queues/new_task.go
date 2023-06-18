@@ -19,7 +19,7 @@ func failOnError(err error, msg string) {
 func main() {
 	//Advanced Message Queuing Protocol (AMQP) enables message direction, queuing, routing (including point-to-point and publish-and-subscribe), reliability and security
 	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
-	failOnError(err, "Failed to connect to RabbitMQ")
+	failOnError(err, "Failed to connect to RabbitMQ!")
 	defer conn.Close()
 
 	//Channel opens a unique, concurrent server channel

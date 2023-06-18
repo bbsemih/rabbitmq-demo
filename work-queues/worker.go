@@ -51,7 +51,7 @@ func main() {
 		false,  // no-wait
 		nil,    // args
 	)
-	failOnError(err, "Failed to register a consumer")
+	failOnError(err, "Failed to register a consumer!")
 
 	var forever chan struct{}
 

@@ -14,11 +14,11 @@ func failOnError(err error, msg string) {
 
 func main() {
 	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
-	failOnError(err, "Failed to connect to RabbitMQ")
+	failOnError(err, "Failed to connect to RabbitMQ!")
 	defer conn.Close()
 
 	ch, err := conn.Channel()
-	failOnError(err, "Failed to open a channel")
+	failOnError(err, "Failed to open a channel!")
 	defer ch.Close()
 
 	q, err := ch.QueueDeclare(
@@ -29,7 +29,7 @@ func main() {
 		false,   // no-wait
 		nil,     // arguments
 	)
-	failOnError(err, "Failed to declare a queue")
+	failOnError(err, "Failed to declare a queue!")
 
 	msgs, err := ch.Consume(
 		q.Name, // queue
